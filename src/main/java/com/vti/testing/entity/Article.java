@@ -10,7 +10,7 @@ public class Article {
     @Column(length = 50, nullable = false, unique = true)
     private String title;
     @Column(name = "`status`", nullable = false)
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = ArticleStatusConverter.class)
     private Status status;
 
     public int getId() {
